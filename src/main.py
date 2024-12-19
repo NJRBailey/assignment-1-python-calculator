@@ -1,3 +1,7 @@
+from datetime import datetime
+
+now = datetime.now()
+print("It is currently " + str(now.hour) + ":" + str(now.minute) + " on " + str(now.day) + "/" + str(now.month) + "/" + str(now.year) + ".")
 first_number = None
 while first_number == None:
   try:
