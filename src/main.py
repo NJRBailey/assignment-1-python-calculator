@@ -45,3 +45,6 @@ while run:
     print(first_number / second_number)
   elif operator == "^":
     print(first_number ** second_number)
+  restart_input = input("Press enter to perform another calculation, or type 'end' to finish: ")
+  if restart_input == "end":
+    run = False
