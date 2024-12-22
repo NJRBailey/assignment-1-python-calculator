@@ -15,11 +15,19 @@ message_index = randint(0, len(messages) - 1)
 print(messages[message_index])
 
 run = True
+result = None
 while run:
   first_number = None
   while first_number == None:
     try:
-      first_number = float(input("Enter the first number: "))
+      if result == None:
+        first_number = float(input("Enter the first number: "))
+      else:
+        first_number_input = input("Enter the first number, or press enter to use previous result: ")
+        if first_number_input == "":
+          first_number = result
+        else:
+          first_number = float(first_number_input)
     except ValueError:
       print("Invalid input. Please enter a number.")
   operator = None
@@ -36,15 +44,16 @@ while run:
     except ValueError:
       print("Invalid input. Please enter a number.")
   if operator == "+":
-    print(first_number + second_number)
+    result = first_number + second_number
   elif operator == "-":
-    print(first_number - second_number)
+    result = first_number - second_number
   elif operator == "*":
-    print(first_number * second_number)
+    result = first_number * second_number
   elif operator == "/":
-    print(first_number / second_number)
+    result = first_number / second_number
   elif operator == "^":
-    print(first_number ** second_number)
+    result = first_number ** second_number
+  print(result)
   restart_input = input("Press enter to perform another calculation, or type 'end' to finish: ")
   if restart_input == "end":
     run = False
