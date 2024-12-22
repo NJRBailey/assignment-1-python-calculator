@@ -33,10 +33,10 @@ while run:
   operator = None
   while operator == None:
     user_input = input("Enter the operator: ")
-    if user_input in ["+", "-", "*", "/", "^", ]:
+    if user_input in ["+", "-", "*", "x", "/", "^"]:
       operator = user_input
     else:
-      print("Invalid input. Please enter a valid operator (+ - * / ^).")
+      print("Invalid input. Please enter a valid operator (+ - * x / ^).")
   second_number = None
   while second_number == None:
     try:
@@ -47,7 +47,7 @@ while run:
     result = first_number + second_number
   elif operator == "-":
     result = first_number - second_number
-  elif operator == "*":
+  elif operator == "*" or operator == "x":
     result = first_number * second_number
   elif operator == "/":
     result = first_number / second_number
