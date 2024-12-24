@@ -15,3 +15,15 @@ def random_message():
 	]
 	message_index = randint(0, len(messages) - 1)
 	return(messages[message_index])
+
+def help_message():
+	return(
+		"""
+		Enter a calculation with two numbers and an operator separated by spaces.
+		If you have already done a calculation, you can use the previous result by entering an operator and a number.
+		Operators: + - * / ^
+		To clear the previous result, enter 'c'.
+		To end the program, enter 'end'.
+		To see this message again, enter 'help'.
+		"""
+	)
